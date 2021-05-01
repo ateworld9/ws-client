@@ -1,10 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
+import { IUser } from 'types';
 
 const myContext = createContext({});
 
 const Context = ({ children }: any) => {
-  const [userObject, setUserObject] = useState<any>();
+  const [userObject, setUserObject] = useState<IUser | any>();
 
   useEffect(() => {
     axios
