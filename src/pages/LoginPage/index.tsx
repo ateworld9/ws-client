@@ -1,5 +1,5 @@
 import s from './LoginPage.module.css';
-import googleLogo from '../../../assets/google_logo.png';
+import googleLogo from 'assets/google_logo.png';
 
 const LoginPage = () => {
   const googleLogin = () => {

@@ -7,6 +7,7 @@ interface IUserState {
   sessionUser: IUser | undefined;
   authorized: boolean;
   user: IUser | undefined;
+  users: IUser[];
   loading: 'INVALID' | 'REQUEST' | 'SUCCESS' | 'FAILURE';
   error: any | null;
 }
@@ -15,6 +16,7 @@ const initialState: IUserState = {
   sessionUser: undefined,
   authorized: false,
   user: undefined,
+  users: [],
   loading: 'INVALID',
   error: null,
 };
@@ -29,6 +31,13 @@ export const userSlice = createSlice({
     getUserSuccess: (state: IUserState, { payload }: PayloadAction<IUser>) => {
       state.loading = 'SUCCESS';
       state.user = payload;
+    },
+    getUsersSuccess: (
+      state: IUserState,
+      { payload }: PayloadAction<IUser[]>
+    ) => {
+      state.loading = 'SUCCESS';
+      state.users = payload;
     },
     setSessionUserSuccess: (
       state: IUserState,
@@ -52,6 +61,7 @@ export const userSlice = createSlice({
 export const {
   getUserRequest,
   getUserSuccess,
+  getUsersSuccess,
   setSessionUserSuccess,
   getUserFailure,
   clearUser,
@@ -71,6 +81,16 @@ export const fetchUserById = (userId?: string) => async (
     } else {
       dispatch(setSessionUserSuccess(response.data));
     }
+  } catch (error) {
+    dispatch(getUserFailure(error));
+  }
+};
+
+export const fetchUsers = () => async (dispatch: AppDispatch) => {
+  dispatch(getUserRequest());
+  try {
+    const response = await axios.get('http://localhost:3001/user/users');
+    dispatch(getUsersSuccess(response.data));
   } catch (error) {
     dispatch(getUserFailure(error));
   }

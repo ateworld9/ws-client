@@ -11,7 +11,8 @@ import {
   ProfilePage,
   HomePage,
   LoginPage,
-} from 'components/pages';
+  UsersPage,
+} from 'pages';
 import './styles.css';
 
 function App() {
@@ -30,7 +31,9 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/profile" exact component={UserProfilePage} />
-        <Route path="/profile/:id" component={ProfilePage} />
+        <Route path="/user/:id" component={ProfilePage} />
+        <Route path="/users" component={UsersPage} />
+        {/* <Route path="*" component={() => <>404 not found </>} /> */}
       </Switch>
     </BrowserRouter>
   );

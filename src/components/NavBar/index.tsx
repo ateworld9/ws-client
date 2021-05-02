@@ -34,6 +34,9 @@ const NavBar = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <li>
+          <Link to="/users">Пользователи</Link>
+        </li>
         {isAuthorized && (
           <>
             <li onClick={logoutHandler}>Logout</li>

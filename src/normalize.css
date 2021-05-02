@@ -21,6 +21,7 @@ p,
 ul[class],
 ol[class],
 li,
+article,
 figure,
 figcaption,
 blockquote,
@@ -28,7 +29,6 @@ dl,
 dd {
   margin: 0;
 }
-
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   min-height: 100vh;
@@ -55,9 +55,9 @@ img {
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
+/* article > * + * {
   margin-top: 1em;
-}
+} */
 
 /* Наследуем шрифты для инпутов и кнопок */
 input,
