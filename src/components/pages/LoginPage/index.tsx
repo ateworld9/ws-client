@@ -1,6 +1,5 @@
-import React from 'react';
 import s from './LoginPage.module.css';
-import googleLogo from '../../assets/google_logo.png';
+import googleLogo from '../../../assets/google_logo.png';
 
 const LoginPage = () => {
   const googleLogin = () => {
@@ -8,7 +7,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={s.loginPage}>
+    <main className={s.loginPage}>
       <h1>Login Page</h1>
       <div className={s.loginForm}>
         <div className={s.googleContainer} onClick={() => googleLogin()}>
@@ -16,7 +15,7 @@ const LoginPage = () => {
           <p>Login with Google</p>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

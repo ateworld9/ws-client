@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { Context } from './Context';
+import { Provider } from 'react-redux';
+import { store } from 'store/store';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import './normalize.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Context>
+    <Provider store={store}>
       <App />
-    </Context>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
