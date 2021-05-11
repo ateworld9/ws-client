@@ -5,9 +5,7 @@ const HomePage = () => {
   const isAuthorized = useAppSelector<boolean>(
     (state) => state.user.authorized
   );
-  const sessionUser = useAppSelector<IUser | undefined>(
-    (state) => state.user.sessionUser
-  );
+  const sessionUser = useAppSelector<IUser>((state) => state.user.sessionUser);
 
   return (
     <main>

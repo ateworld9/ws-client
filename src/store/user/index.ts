@@ -4,18 +4,26 @@ import { AppDispatch } from 'store/store';
 import { IUser } from 'types';
 
 interface IUserState {
-  sessionUser: IUser | undefined;
+  sessionUser: IUser;
   authorized: boolean;
-  user: IUser | undefined;
+  user: IUser;
   users: IUser[];
   loading: 'INVALID' | 'REQUEST' | 'SUCCESS' | 'FAILURE';
   error: any | null;
 }
 
 const initialState: IUserState = {
-  sessionUser: undefined,
+  sessionUser: {
+    _id: '',
+    name: '',
+    __v: NaN,
+  },
   authorized: false,
-  user: undefined,
+  user: {
+    _id: '',
+    name: '',
+    __v: NaN,
+  },
   users: [],
   loading: 'INVALID',
   error: null,
@@ -52,7 +60,11 @@ export const userSlice = createSlice({
       state.error = payload;
     },
     clearUser: (state: IUserState) => {
-      state.user = undefined;
+      state.user = {
+        _id: '',
+        name: '',
+        __v: NaN,
+      };
       state.authorized = false;
     },
   },

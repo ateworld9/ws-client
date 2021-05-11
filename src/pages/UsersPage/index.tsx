@@ -32,7 +32,7 @@ const UsersPage = () => {
                   {user.name} {user?.surname}
                 </Link>
               </h2>
-              {isAuthorized && <button>Диалог</button>}
+              {isAuthorized && <Link to={`/dialog/${user._id}`}>Диалог</Link>}
             </div>
           </article>
         ))}

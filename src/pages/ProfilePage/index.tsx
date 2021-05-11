@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import { fetchUserById } from 'store';
 
 const ProfilePage = () => {
-  const user = useAppSelector<IUser | undefined>((state) => state.user.user);
+  const user = useAppSelector<IUser>((state) => state.user.user);
   const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
   useEffect(() => {

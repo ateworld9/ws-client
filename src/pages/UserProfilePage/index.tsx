@@ -6,9 +6,7 @@ import s from './UserProfilePage.module.css';
 import noAvatar from 'assets/profile-no-avatar.png';
 
 const UserProfilePage = () => {
-  const user = useAppSelector<IUser | undefined>(
-    (state) => state.user.sessionUser
-  );
+  const user = useAppSelector<IUser>((state) => state.user.sessionUser);
   return (
     <main className={s.container}>
       <div className={s.avatarContainer}>
