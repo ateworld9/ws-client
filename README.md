@@ -1,3 +1,7 @@
+Видео- пример работы Приложения https://drive.google.com/file/d/1AHV9kJTCA812rSTQsaedOhvPJaLauqVK/view
+
+сейчас находится в разработке
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
